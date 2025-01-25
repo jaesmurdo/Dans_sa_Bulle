@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BackgroundBubbletacapte_0: -6765416933917009021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
