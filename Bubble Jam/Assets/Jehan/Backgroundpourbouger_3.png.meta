@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Backgroundpourbouger_3_0: 1364622506890745908
+      Backgroundpourbouger_3_1: 2274024438216969140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

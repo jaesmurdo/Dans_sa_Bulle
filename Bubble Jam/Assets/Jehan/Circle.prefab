@@ -107,9 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d159c3feb81364b93465daf5037de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
+  player: {fileID: 0}
   shakeEffectController: {fileID: 9017076514824206157}
-  moveToCollisionDuration: 0.5
   states:
   - scale: {x: 0.5, y: 0.5, z: 0}
     color: {r: 0.66389203, g: 1, b: 0.6273585, a: 1}
@@ -172,13 +171,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  incrementInterval: 8
+  incrementInterval: 4
   spawnSound: {fileID: 8300000, guid: 5032a3688de082c4e9b7e06bdf6e0dfe, type: 3}
   incrementSound: {fileID: 8300000, guid: 5032a3688de082c4e9b7e06bdf6e0dfe, type: 3}
   decrementSound: {fileID: 8300000, guid: 2904e1e30ac142e4989683d60b2f84a3, type: 3}
   destructionSound: {fileID: 8300000, guid: ac26946fc57cc6841a1bcee72f679725, type: 3}
-  explosionSound: {fileID: 8300000, guid: ac26946fc57cc6841a1bcee72f679725, type: 3}
-  pointSound: {fileID: 8300000, guid: 2904e1e30ac142e4989683d60b2f84a3, type: 3}
 --- !u!58 &8818178120251122520
 CircleCollider2D:
   m_ObjectHideFlags: 0

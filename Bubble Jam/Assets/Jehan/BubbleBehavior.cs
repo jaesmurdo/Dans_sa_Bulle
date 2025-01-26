@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class CircleStateController : MonoBehaviour
 {
@@ -7,55 +6,62 @@ public class CircleStateController : MonoBehaviour
     public class State
     {
         public Vector3 scale; // Taille associée à cet état
-        public Color color; // Couleur associée à cet état
+        public Color color;   // Couleur associée à cet état
     }
 
-    public Player playerScript; // Référence au script Player
+    [Header("Player Configuration")]
+    private Player playerScript;   // Référence au script Player
+
+    [Header("Shake Effect Configuration")]
     public ShakeEffectController shakeEffectController; // Référence au script de secousse
-    private Vector3 collisionPoint; // Point de collision
-    [SerializeField] private float moveToCollisionDuration = 0.01f; // Durée pour atteindre le point de collision
-    
 
     [Header("States Configuration")]
-    public State[] states; // Tableau des états
+    public State[] states;         // Tableau des états
     public GameObject bubblePrefab; // Prefab de la bulle à instancier après fusion
 
-    private int currentIndex; // Index de l'état actuel
-    private int targetIndex; // Index cible de l'état pour interpolation
+    private int currentIndex;       // Index de l'état actuel
+    private int targetIndex;        // Index cible de l'état pour interpolation
 
-    private Renderer circleRenderer; // Renderer du rond
+    private Renderer circleRenderer; // Renderer du cercle
     private Collider2D circleCollider; // Collider de la bulle
 
     [Header("Lerp Configuration")]
-    [SerializeField] private float lerpDuration = 1f; // Durée de l'interpolation (modifiable dans l'inspecteur)
-    [SerializeField] private AnimationCurve lerpCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); // Courbe de lerp non linéaire (modifiable dans l'inspecteur)
+    [SerializeField] private float lerpDuration = 1f; // Durée de l'interpolation
+    [SerializeField] private AnimationCurve lerpCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); // Courbe d'interpolation
 
-    private float lerpTime = 0f; // Temps écoulé pour lerp
+    private float lerpTime = 0f;       // Temps écoulé pour l'interpolation
     private bool isInterpolating = false; // Flag pour savoir si l'interpolation est en cours
 
     [Header("Increment Configuration")]
-    public float incrementInterval = 5f; // Intervalle pour l'incrémentation dans chaque cercle
+    public float incrementInterval = 5f; // Intervalle pour l'incrémentation
     private float timeSinceLastIncrement = 0f; // Temps depuis la dernière incrémentation
 
     [Header("Sound Configuration")]
-    [SerializeField] private AudioClip spawnSound; // Son à jouer lors de l'apparition (spawn)
-    [SerializeField] private AudioClip incrementSound; // Son à jouer lors de l'incrémentation
-    [SerializeField] private AudioClip decrementSound; // Son à jouer lors de la décrémentation
-    [SerializeField] private AudioClip destructionSound; // Son à jouer lors de la destruction
-    [SerializeField] private AudioClip explosionSound; // Son d'explosion
-    [SerializeField] private AudioClip pointSound; // Son à jouer lors de la destruction à l'index 0
+    [SerializeField] private AudioClip spawnSound;
+    [SerializeField] private AudioClip incrementSound;
+    [SerializeField] private AudioClip decrementSound;
+    [SerializeField] private AudioClip destructionSound;
 
-    private AudioSource audioSource; // Référence à l'AudioSource
+    private AudioSource audioSource;
 
     void Start()
     {
-        // Initialisation des composants et son
+        // Initialisation des composants et audio
         circleRenderer = GetComponent<Renderer>();
-        circleCollider = GetComponent<Collider2D>(); // Récupère le Collider2D de la bulle
+        circleCollider = GetComponent<Collider2D>();
         audioSource = GetComponent<AudioSource>();
 
         if (circleRenderer == null || circleCollider == null)
         {
+            Debug.LogError("Renderer ou Collider non trouvé !");
+            return;
+        }
+
+        // Recherche du Player via son script
+        playerScript = FindObjectOfType<Player>();
+        if (playerScript == null)
+        {
+            Debug.LogError("Aucun objet dans la scène ne contient le script Player !");
             return;
         }
 
@@ -64,10 +70,10 @@ public class CircleStateController : MonoBehaviour
         targetIndex = currentIndex;
         ApplyState();
 
-        // Jouer le son de spawn lors de l'apparition de la bulle
+        // Jouer le son de spawn
         if (audioSource != null && spawnSound != null)
         {
-            audioSource.PlayOneShot(spawnSound); // Joue le son de spawn
+            audioSource.PlayOneShot(spawnSound);
         }
     }
 
@@ -118,36 +124,24 @@ public class CircleStateController : MonoBehaviour
         }
         else
         {
-            // Si l'index est déjà à 0, détruit la bulle avec le son "point sound"
-            StartCoroutine(DestroyWithPointSound());
+            DestroyWithSound();
         }
-    }
-
-    public void InitializeRandomState()
-    {
-        currentIndex = Random.Range(0, states.Length); // Choisit un index aléatoire
-        targetIndex = currentIndex;
-        ApplyState();
-    }
-
-    private void ApplyState()
-    {
-        if (currentIndex < 0 || currentIndex >= states.Length)
-        {
-            return;
-        }
-
-        transform.localScale = states[currentIndex].scale;
-        circleRenderer.material.color = states[currentIndex].color;
     }
 
     private void IncrementState()
     {
         if (currentIndex == states.Length - 1)
         {
+            // Joue le son de destruction
             if (audioSource != null && destructionSound != null)
             {
                 audioSource.PlayOneShot(destructionSound);
+            }
+
+            // Applique des dégâts au joueur
+            if (playerScript != null)
+            {
+                playerScript.TakeDamage();
             }
 
             Destroy(gameObject);
@@ -174,114 +168,24 @@ public class CircleStateController : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void ApplyState()
     {
-        // Vérifie que l'objet en collision est étiqueté "bubble"
-        if (collision.gameObject.CompareTag("bubble"))
+        if (currentIndex < 0 || currentIndex >= states.Length)
         {
-            Debug.Log("Collision détectée avec un objet étiqueté 'bubble'.");
-
-            // Récupère le script CircleStateController de l'autre objet
-            CircleStateController otherCircle = collision.gameObject.GetComponent<CircleStateController>();
-
-            if (otherCircle != null)
-            {
-                Debug.Log("Autre objet possède un CircleStateController.");
-
-                // Vérifie si les deux objets ont le même index
-                if (currentIndex == otherCircle.currentIndex)
-                {
-                    Debug.Log("Les deux objets ont le même index. Déclenchement de l'animation de fusion.");
-
-                    // Déterminer le point de collision
-                    collisionPoint = collision.GetContact(0).point;
-
-                    // Désactiver les colliders des deux objets
-                    circleCollider.enabled = false;
-                    otherCircle.circleCollider.enabled = false;
-
-                    // Déplacer les deux bulles vers le point de collision
-                    StartCoroutine(MoveToCollisionPoint(otherCircle));
-                }
-                else
-                {
-                    Debug.Log("Les objets n'ont pas le même index. Aucune destruction.");
-                }
-            }
-            else
-            {
-                Debug.Log("L'autre objet n'a pas de CircleStateController.");
-            }
+            return;
         }
-        else
-        {
-            Debug.Log("L'objet en collision n'est pas une 'bubble'.");
-        }
+
+        transform.localScale = states[currentIndex].scale;
+        circleRenderer.material.color = states[currentIndex].color;
     }
 
-    // Coroutine pour déplacer les bulles vers le point de collision
-    private IEnumerator MoveToCollisionPoint(CircleStateController otherCircle)
+    private void DestroyWithSound()
     {
-        Vector3 startPosition = transform.position; // Position initiale
-        Vector3 otherStartPosition = otherCircle.transform.position; // Position initiale de l'autre bulle
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < moveToCollisionDuration)
+        if (audioSource != null && destructionSound != null)
         {
-            // Calculer le facteur de progression
-            float lerpFactor = elapsedTime / moveToCollisionDuration;
-
-            // Déplacer la bulle actuelle et l'autre bulle vers le point de collision
-            transform.position = Vector3.Lerp(startPosition, collisionPoint, lerpFactor);
-            otherCircle.transform.position = Vector3.Lerp(otherStartPosition, collisionPoint, lerpFactor);
-
-            elapsedTime += Time.deltaTime;
-            yield return null; // Attendre la prochaine frame
+            audioSource.PlayOneShot(destructionSound);
         }
 
-        // S'assurer que les positions sont alignées avec le point de collision
-        transform.position = collisionPoint;
-        otherCircle.transform.position = collisionPoint;
-
-        // Détruire les deux bulles
         Destroy(gameObject);
-        Destroy(otherCircle.gameObject);
-    }
-
-    // Coroutine pour retarder la destruction avec le son "point sound"
-    private IEnumerator DestroyWithPointSound()
-    {
-        // Joue le son "point sound"
-        if (audioSource != null && pointSound != null)
-        {
-            audioSource.PlayOneShot(pointSound);
-        }
-
-        // Attente de 0.1 seconde
-        yield return new WaitForSeconds(0.02f);
-
-        // Détruire l'objet
-        Destroy(gameObject);
-    }
-
-    private IEnumerator DelayedDestroy(CircleStateController otherCircle)
-    {
-        // Attend un peu avant de détruire les objets (par exemple 0.5 seconde)
-        yield return new WaitForSeconds(0.5f);
-
-        DestroyWithExplosionSound();
-        otherCircle.DestroyWithExplosionSound();
-    }
-
-    private void DestroyWithExplosionSound()
-    {
-        // Joue le son d'explosion
-        if (audioSource != null && explosionSound != null)
-        {
-            audioSource.PlayOneShot(explosionSound);
-        }
-        Destroy(gameObject); // Détruire l'objet
     }
 }

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      textured-blackboard-with-chalks-eraser_0: -8621032164638350052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

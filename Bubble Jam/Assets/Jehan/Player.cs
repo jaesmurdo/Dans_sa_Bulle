@@ -1,11 +1,12 @@
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
 
-    public int maxHealth = 3;
+    public int maxHealth = 2;
     public int currentHealth;
     
 
@@ -20,10 +21,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TakeDamage();
-        }
+       
 
         if (currentHealth <= 0)
         {
@@ -42,6 +40,6 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        print("Game Over");
+        SceneManager.LoadSceneAsync(2);
     }
 }
