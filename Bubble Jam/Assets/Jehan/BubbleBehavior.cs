@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class CircleStateController : MonoBehaviour
 {
     [System.Serializable]
@@ -77,6 +77,7 @@ public class CircleStateController : MonoBehaviour
         }
     }
 
+
     void Update()
     {
         timeSinceLastIncrement += Time.deltaTime;
@@ -141,6 +142,7 @@ public class CircleStateController : MonoBehaviour
             // Applique des dégâts au joueur
             if (playerScript != null)
             {
+                
                 playerScript.TakeDamage();
             }
 
@@ -187,5 +189,61 @@ public class CircleStateController : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    // Nouvelle fonction pour gérer la fusion entre deux boules
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Vérifie si la collision est avec un objet ayant le tag "bubble"
+        if (collision.gameObject.CompareTag("bubble"))
+        {
+            CircleStateController other = collision.gameObject.GetComponent<CircleStateController>();
+
+            // Vérifie si l'autre objet a le même index et que l'un des indices est 3
+            if (other != null && other.currentIndex == this.currentIndex)
+            {
+                // Empêche la fusion si l'une des boules a l'index 3
+                if (this.currentIndex != 3 && other.currentIndex != 3)
+                {
+                    // Lancer la fusion avec un lerp avant de supprimer les deux boules
+                    StartCoroutine(FusionnerAvecLerp(other, collision.contacts[0].point));
+                }
+            }
+        }
+    }
+
+
+
+    // Fonction pour fusionner deux boules
+    private IEnumerator FusionnerAvecLerp(CircleStateController other, Vector3 collisionPoint)
+    {
+        // Initialisation de la position des deux boules et du temps de lerp
+        Vector3 startPos1 = transform.position;
+        Vector3 startPos2 = other.transform.position;
+        float lerpTime = 0f;
+        float lerpDuration = 1f; // Durée du Lerp (en secondes)
+
+        // Jouer le son d'explosion
+        if (audioSource != null && destructionSound != null)
+        {
+            audioSource.PlayOneShot(destructionSound);
+        }
+
+        // Effectuer le Lerp pour rapprocher les deux boules vers le point de collision
+        while (lerpTime < lerpDuration)
+        {
+            lerpTime += Time.deltaTime;
+            float lerpFactor = Mathf.Clamp01(lerpTime / lerpDuration);
+
+            // Appliquer l'interpolation de position pour les deux boules vers le point de collision
+            transform.position = Vector3.Lerp(startPos1, collisionPoint, lerpFactor);
+            other.transform.position = Vector3.Lerp(startPos2, collisionPoint, lerpFactor);
+
+            yield return null;
+        }
+
+        // Une fois le Lerp terminé, détruire les deux boules
+        Destroy(this.gameObject);
+        Destroy(other.gameObject);
     }
 }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5317199295159492570}
   - component: {fileID: 890363173860418649}
   - component: {fileID: 9017076514824206157}
+  - component: {fileID: -6951946538253377711}
   m_Layer: 0
   m_Name: Circle
   m_TagString: bubble
@@ -107,16 +108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d159c3feb81364b93465daf5037de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   shakeEffectController: {fileID: 9017076514824206157}
   states:
-  - scale: {x: 0.5, y: 0.5, z: 0}
+  - scale: {x: 0.4, y: 0.4, z: 0}
     color: {r: 0.66389203, g: 1, b: 0.6273585, a: 1}
-  - scale: {x: 0.7, y: 0.7, z: 0}
+  - scale: {x: 0.6, y: 0.6, z: 0}
     color: {r: 1, g: 0.9190899, b: 0.6179246, a: 1}
-  - scale: {x: 0.9, y: 0.9, z: 0}
+  - scale: {x: 0.7, y: 0.7, z: 0}
     color: {r: 1, g: 0.7569922, b: 0.5896226, a: 1}
-  - scale: {x: 1.1, y: 1.1, z: 0}
+  - scale: {x: 0.95, y: 0.95, z: 0}
     color: {r: 1, g: 0.5424528, b: 0.63216794, a: 1}
   bubblePrefab: {fileID: 0}
   lerpDuration: 0.08
@@ -171,7 +171,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  incrementInterval: 4
+  incrementInterval: 5.5
   spawnSound: {fileID: 8300000, guid: 5032a3688de082c4e9b7e06bdf6e0dfe, type: 3}
   incrementSound: {fileID: 8300000, guid: 5032a3688de082c4e9b7e06bdf6e0dfe, type: 3}
   decrementSound: {fileID: 8300000, guid: 2904e1e30ac142e4989683d60b2f84a3, type: 3}
@@ -429,6 +429,18 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxShakeIntensity: 10.6
   shakeFrequency: 20
+--- !u!114 &-6951946538253377711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591827377231239624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3d27d7efcbbd64c9fbb52a47ccd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8039709087001674323
 GameObject:
   m_ObjectHideFlags: 0

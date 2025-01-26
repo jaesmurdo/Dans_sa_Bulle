@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -111,16 +112,29 @@ public class LevelManager : MonoBehaviour
         if (spawnLocations.Length == 0 || objectToSpawn == null) return;
 
         bool spawnSuccessful = false;
+        List<int> usedIndices = new List<int>();  // Liste pour suivre les indices utilisés
 
         for (int attempt = 0; attempt < 20; attempt++)
         {
             int randomIndex = Random.Range(0, spawnLocations.Length);
+
+            // Si l'indice a déjà été utilisé, on passe à un autre
+            if (usedIndices.Contains(randomIndex))
+            {
+                continue;
+            }
+
             Vector3 spawnPosition = spawnLocations[randomIndex].transform.position;
 
+            // Vérifie si la position est occupée par une autre bulle
             bool isOccupied = IsLocationOccupied(spawnPosition);
 
             if (!isOccupied)
             {
+                // Ajoute cet indice à la liste des indices utilisés
+                usedIndices.Add(randomIndex);
+
+                // Instancie l'objet à cet emplacement
                 GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
 
                 if (audioSource != null && spawnSound != null)
@@ -138,7 +152,6 @@ public class LevelManager : MonoBehaviour
             Debug.LogWarning("Impossible de spawn une bulle après plusieurs tentatives.");
         }
     }
-
     bool IsLocationOccupied(Vector3 position)
     {
         GameObject[] existingBubbles = GameObject.FindGameObjectsWithTag("bubble");
