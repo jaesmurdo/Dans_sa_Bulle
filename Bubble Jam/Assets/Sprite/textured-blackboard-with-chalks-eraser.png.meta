@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 39c822770ce087e4fbbe9eb3e0dca29d
+guid: 37b6e50323a132e4982f3437dffd0e66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3949205699860592951
-    second: Goatdanslabulle_0
+      213: -8621032164638350052
+    second: textured-blackboard-with-chalks-eraser_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goatdanslabulle_0
+      name: textured-blackboard-with-chalks-eraser_0
       rect:
         serializedVersion: 2
-        x: 115
-        y: 131
-        width: 771
-        height: 762
+        x: 104
+        y: 97
+        width: 1798
+        height: 1176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c68cdaf65a9139c0800000000000000
-      internalID: -3949205699860592951
+      spriteID: c15a3852ce0fb5880800000000000000
+      internalID: -8621032164638350052
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Goatdanslabulle_0: -3949205699860592951
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

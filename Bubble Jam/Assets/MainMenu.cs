@@ -9,4 +9,9 @@ public class MainMenu : MonoBehaviour
         // Charge la scène suivante de manière asynchrone
         SceneManager.LoadSceneAsync(1);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
