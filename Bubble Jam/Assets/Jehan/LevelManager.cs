@@ -10,11 +10,30 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int maxBubblesAllowed = 3; // Nombre maximum de bulles autorisées à spawn
     [SerializeField] private float minimumDistanceBetweenBubbles = 0.5f; // Distance minimale entre les bulles
 
+    [Header("Sound Configuration")]
+    [SerializeField] private AudioClip spawnSound; // Son à jouer lors du spawn
+    private AudioSource audioSource; // Référence à l'AudioSource
+
     private float timeSinceLastSpawn = 0f; // Temps depuis le dernier spawn
 
     void Start()
     {
         if (spawnLocations.Length == 0 || objectToSpawn == null) return;
+
+        // Récupère l'AudioSource attaché à ce GameObject
+        audioSource = GetComponent<AudioSource>();
+
+        // Vérifie si AudioSource est bien attaché
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource non trouvé sur ce GameObject.");
+        }
+
+        // Vérifie si spawnSound est assigné
+        if (spawnSound == null)
+        {
+            Debug.LogError("Le son de spawn n'est pas assigné dans l'inspecteur.");
+        }
     }
 
     void Update()
@@ -64,6 +83,13 @@ public class LevelManager : MonoBehaviour
                 if (circleStateController != null)
                 {
                     circleStateController.InitializeRandomState(); // Fonction pour initialiser un état aléatoire
+                }
+
+                // Joue le son de spawn chaque fois que l'objet est spawn
+                if (audioSource != null && spawnSound != null)
+                {
+                    audioSource.PlayOneShot(spawnSound); // Assure-toi de jouer le son à chaque spawn
+                    Debug.Log("Son de spawn joué avec succès.");
                 }
 
                 spawnSuccessful = true;

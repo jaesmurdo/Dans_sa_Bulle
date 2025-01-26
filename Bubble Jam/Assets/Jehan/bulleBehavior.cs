@@ -2,106 +2,118 @@ using UnityEngine;
 
 public class BulleBehavior : MonoBehaviour
 {
-    public float speed = 5f; // Vitesse de dÈplacement vers la cible
+    public float speed = 5f; // Vitesse de d√©placement vers la cible
     public float floatAmplitude = 0.5f; // Amplitude du mouvement flottant
-    public float noiseFrequency = 1f; // FrÈquence des variations alÈatoires
+    public float noiseFrequencyIncrement = 1f; // Fr√©quence des variations al√©atoires lors de l'incr√©mentation
+    public float noiseFrequencyDecrement = 0.5f; // Fr√©quence des variations al√©atoires lors de la d√©cr√©mentation
 
     public bool isFleeing = false; // Indique si l'attaque est en cours
     private Vector2 initialPosition; // Position initiale pour le mouvement flottant
 
-    public float randomTargetRadius = 3f; // Rayon pour les cibles alÈatoires
+    public float randomTargetRadius = 3f; // Rayon pour les cibles al√©atoires
     private Vector2 currentTarget; // Stocke la cible actuelle
 
-    private Rigidbody2D rb; // RÈfÈrence au Rigidbody2D
+    private Rigidbody2D rb; // R√©f√©rence au Rigidbody2D
 
     void Start()
     {
-        // RÈcupËre le Rigidbody2D pour utiliser la physique pour le mouvement
+        // R√©cup√®re le Rigidbody2D pour utiliser la physique pour le mouvement
         rb = GetComponent<Rigidbody2D>();
 
-        // DÈfinit une cible alÈatoire au dÈpart
+        // D√©finit une cible al√©atoire au d√©part
         currentTarget = GetRandomTarget(randomTargetRadius);
 
-        // Enregistre la position de dÈpart
+        // Enregistre la position de d√©part
         initialPosition = transform.position;
 
-        // Initialise une frÈquence de bruit alÈatoire entre 0.5 et 2.0
-        noiseFrequency = Random.Range(0.5f, 2.0f);
-
-        Debug.Log("Initial Noise Frequency: " + noiseFrequency); // Pour vÈrifier dans la console
+        // D√©finir la fr√©quence de bruit al√©atoire (Incr√©mentation ou D√©cr√©mentation sera g√©r√© par les actions)
+        Debug.Log("Initial Noise Frequencies - Increment: " + noiseFrequencyIncrement + ", Decrement: " + noiseFrequencyDecrement);
     }
 
     void Update()
     {
-        // DÈclenche l'attaque avec la touche Espace
-        if (Input.GetKeyDown(KeyCode.Space) && !isFleeing) // VÈrifie si isFleeing est false
+        // D√©clenche l'attaque avec la touche Espace
+        if (Input.GetKeyDown(KeyCode.Space) && !isFleeing) // V√©rifie si isFleeing est false
         {
             isFleeing = true;
-            currentTarget = GetRandomTarget(randomTargetRadius); // Initialise une nouvelle cible directement
+            ApplyRandomDirection(); // Envoie dans une direction al√©atoire
         }
 
         // Appliquer le mouvement
         if (isFleeing)
         {
-            // VÈrifie si l'objet est proche de la cible pour en gÈnÈrer une nouvelle
+            // V√©rifie si l'objet est proche de la cible pour en g√©n√©rer une nouvelle
             if (Vector2.Distance(transform.position, currentTarget) < 0.1f)
             {
-                isFleeing = false; // DÈsactive l'Ètat fleeing une fois arrivÈ
+                isFleeing = false; // D√©sactive l'√©tat fleeing une fois arriv√©
                 initialPosition = transform.position;
             }
             else
             {
-                MoveTowards(currentTarget); // Continue de se dÈplacer vers la cible
+                MoveTowards(currentTarget, noiseFrequencyDecrement); // Continue de se d√©placer vers la cible avec le bruit de d√©cr√©mentation
             }
         }
         else
         {
-            ApplyFloatingMotion(); // Mouvement flottant imprÈvisible
+            ApplyFloatingMotion(noiseFrequencyIncrement); // Mouvement flottant impr√©visible avec bruit d'incr√©mentation
         }
     }
 
-    // DÈplacement vers une cible spÈcifique
-    private void MoveTowards(Vector2 target)
+    // D√©placement vers une cible sp√©cifique
+    private void MoveTowards(Vector2 target, float noiseFrequency)
     {
-        // DÈplacement vers la cible avec superposition du mouvement flottant
-        Vector2 floatOffset = GetUnpredictableOffset();
+        // D√©placement vers la cible avec superposition du mouvement flottant
+        Vector2 floatOffset = GetUnpredictableOffset(noiseFrequency);
         Vector2 newPosition = Vector2.MoveTowards(transform.position, target + floatOffset, speed * Time.deltaTime);
 
-        // DÈplacer l'objet via Rigidbody2D pour respecter les collisions et la physique
+        // D√©placer l'objet via Rigidbody2D pour respecter les collisions et la physique
         rb.MovePosition(newPosition);
     }
 
-    // Appliquer un mouvement flottant imprÈvisible autour de la position actuelle
-    private void ApplyFloatingMotion()
+    // Appliquer un mouvement flottant impr√©visible autour de la position actuelle
+    private void ApplyFloatingMotion(float noiseFrequency)
     {
-        Vector2 floatOffset = GetUnpredictableOffset();
+        Vector2 floatOffset = GetUnpredictableOffset(noiseFrequency);
         Vector2 newPosition = initialPosition + floatOffset;
 
-        // DÈplacer l'objet via Rigidbody2D pour respecter les collisions et la physique
+        // D√©placer l'objet via Rigidbody2D pour respecter les collisions et la physique
         rb.MovePosition(newPosition);
     }
 
-    // Calcul de l'offset pour le mouvement flottant imprÈvisible
-    private Vector2 GetUnpredictableOffset()
+    // Calcul de l'offset pour le mouvement flottant impr√©visible, en prenant en compte la fr√©quence du bruit
+    private Vector2 GetUnpredictableOffset(float noiseFrequency)
     {
-        // GÈnËre des valeurs de bruit Perlin basÈes sur le temps
+        // G√©n√®re des valeurs de bruit Perlin bas√©es sur le temps
         float x = Mathf.PerlinNoise(Time.time * noiseFrequency, 0f) * 2f - 1f; // Valeur entre -1 et 1
         float y = Mathf.PerlinNoise(0f, Time.time * noiseFrequency) * 2f - 1f; // Valeur entre -1 et 1
 
-        // Applique l'amplitude pour contrÙler l'intensitÈ du mouvement
+        // Applique l'amplitude pour contr√¥ler l'intensit√© du mouvement
         return new Vector2(x, y) * floatAmplitude;
+    }
+
+    // Applique une force dans une direction al√©atoire
+    private void ApplyRandomDirection()
+    {
+        // G√©n√®re un angle al√©atoire en radians
+        float angle = Random.Range(0f, Mathf.PI * 2);
+
+        // Convertit l'angle en un vecteur directionnel
+        Vector2 randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+        // Applique une impulsion dans la direction al√©atoire
+        rb.linearVelocity = randomDirection * speed;
     }
 
     private Vector2 GetRandomTarget(float radius)
     {
-        // GÈnËre un angle alÈatoire en radians
+        // G√©n√®re un angle al√©atoire en radians
         float angle = Random.Range(0f, Mathf.PI * 2);
 
-        // Calcule les coordonnÈes en fonction du rayon et de l'angle
+        // Calcule les coordonn√©es en fonction du rayon et de l'angle
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
 
-        // Retourne la position relative ‡ la position actuelle
+        // Retourne la position relative √† la position actuelle
         return new Vector2(transform.position.x + x, transform.position.y + y);
     }
 }

@@ -32,6 +32,15 @@ public class CircleStateController : MonoBehaviour
     public float incrementInterval = 5f; // Intervalle pour l'incrémentation dans chaque cercle
     private float timeSinceLastIncrement = 0f; // Temps depuis la dernière incrémentation
 
+    [Header("Sound Configuration")]
+    [SerializeField] private AudioClip spawnSound; // Son à jouer lors de l'apparition (spawn)
+    [SerializeField] private AudioClip incrementSound; // Son à jouer lors de l'incrémentation
+    [SerializeField] private AudioClip decrementSound; // Son à jouer lors de la décrémentation
+    [SerializeField] private AudioClip destructionSound; // Son à jouer lors de la destruction
+    [SerializeField] private AudioClip explosionSound; // Son d'explosion
+
+    private AudioSource audioSource; // Référence à l'AudioSource
+
     void Start()
     {
         // Trouver le GameObject "Player" dans la scène
@@ -64,6 +73,15 @@ public class CircleStateController : MonoBehaviour
         currentIndex = Random.Range(0, states.Length);
         targetIndex = currentIndex;
         ApplyState();
+
+        // Récupérer l'AudioSource attaché à cet objet
+        audioSource = GetComponent<AudioSource>();
+
+        // Jouer le son de spawn lors de l'apparition de la bulle
+        if (audioSource != null && spawnSound != null)
+        {
+            audioSource.PlayOneShot(spawnSound); // Joue le son de spawn
+        }
     }
 
     public void InitializeRandomState()
@@ -83,7 +101,7 @@ public class CircleStateController : MonoBehaviour
     {
         if (currentIndex == 0)
         {
-            Destroy(gameObject);
+            DestroyWithSound(); // Appel pour jouer le son et détruire l'objet
             return;
         }
 
@@ -94,15 +112,36 @@ public class CircleStateController : MonoBehaviour
         {
             isInterpolating = true;
         }
+
+        // Joue le son de décrémentation
+        if (audioSource != null && decrementSound != null)
+        {
+            audioSource.PlayOneShot(decrementSound);
+        }
     }
 
+    // Incrémente l'état du cercle
     // Incrémente l'état du cercle
     public void IncrementState()
     {
         if (currentIndex == states.Length - 1)
         {
+            // Si on atteint l'index final (pour destruction)
+            if (audioSource != null && destructionSound != null)
+            {
+                audioSource.PlayOneShot(destructionSound);
+            }
+
             Destroy(gameObject); // Détruit l'objet
             playerScript.TakeDamage();
+           
+
+            // Jouer le son d'explosion après destruction
+            if (audioSource != null && explosionSound != null)
+            {
+                audioSource.PlayOneShot(explosionSound);
+            }
+
             return; // Sort de la méthode pour éviter de continuer
         }
 
@@ -113,7 +152,14 @@ public class CircleStateController : MonoBehaviour
         {
             isInterpolating = true;
         }
+
+        // Joue le son d'incrémentation
+        if (audioSource != null && incrementSound != null)
+        {
+            audioSource.PlayOneShot(incrementSound);
+        }
     }
+
 
     void Update()
     {
@@ -177,6 +223,12 @@ public class CircleStateController : MonoBehaviour
                 // Compare les index
                 if (currentIndex == otherCircle.currentIndex)
                 {
+                    // Joue le son de destruction avant de détruire les deux objets
+                    if (audioSource != null && destructionSound != null)
+                    {
+                        audioSource.PlayOneShot(destructionSound);
+                    }
+
                     // Détruire les deux objets
                     Vector2 collisionPoint = collision.GetContact(0).point; // Point de collision
 
@@ -216,5 +268,15 @@ public class CircleStateController : MonoBehaviour
         currentIndex = index;
         targetIndex = currentIndex;
         ApplyState();
+    }
+
+    // Méthode pour jouer le son de destruction et détruire l'objet
+    private void DestroyWithSound()
+    {
+        if (audioSource != null && destructionSound != null)
+        {
+            audioSource.PlayOneShot(destructionSound);
+        }
+        Destroy(gameObject); // Détruit l'objet
     }
 }
