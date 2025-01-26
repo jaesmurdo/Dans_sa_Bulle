@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 2529422882492076054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 17}
   m_LocalScale: {x: 2.9996274, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 2716076818666933133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13853931, y: -0.96, z: 0.32204494}
+  m_LocalPosition: {x: -0.13853931, y: -0.96, z: 2.19}
   m_LocalScale: {x: 1, y: 1.3277, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -321,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 2845165269380402259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.34, y: 2.3785403, z: 1.9}
+  m_LocalPosition: {x: 9.34, y: 2.3785403, z: 5.53}
   m_LocalScale: {x: 1.1375, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.001
-  floatAmplitude: 0.1
+  floatAmplitude: 0.01
   noiseFrequencyIncrement: 1
   noiseFrequencyDecrement: 0.5
   isFleeing: 0
@@ -373,7 +373,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 7
 --- !u!1 &3603810393249254552
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 3729126426029521888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.19, y: -0.82, z: 6.91}
+  m_LocalPosition: {x: -4.19, y: -0.82, z: 10.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -580,7 +580,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 3
 --- !u!1 &4061458206594818461
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.001
-  floatAmplitude: 0.01
+  floatAmplitude: 0.002
   noiseFrequencyIncrement: 1
   noiseFrequencyDecrement: 0.5
   isFleeing: 0
@@ -660,7 +660,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 7
 --- !u!1 &5225156140606691218
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 5671295437059748968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.49, y: 2.3785403, z: 0.26}
+  m_LocalPosition: {x: 8.49, y: 2.3785403, z: 6.04}
   m_LocalScale: {x: 1.1375, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.001
-  floatAmplitude: 0.13
+  floatAmplitude: 0.02
   noiseFrequencyIncrement: 1
   noiseFrequencyDecrement: 0.5
   isFleeing: 0
@@ -914,7 +914,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 7
 --- !u!1 &6293373888974407088
 GameObject:
   m_ObjectHideFlags: 0

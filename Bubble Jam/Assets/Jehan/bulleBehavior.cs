@@ -26,7 +26,10 @@ public class BulleBehavior : MonoBehaviour
         // Enregistre la position de départ
         initialPosition = transform.position;
 
-        // Définir la fréquence de bruit aléatoire (Incrémentation ou Décrémentation sera géré par les actions)
+        // Initialiser les fréquences de bruit avec des valeurs aléatoires
+        noiseFrequencyIncrement = Random.Range(0.8f, 1.5f); // Valeurs aléatoires pour l'incrémentation
+        noiseFrequencyDecrement = Random.Range(0.3f, 0.8f); // Valeurs aléatoires pour la décrémentation
+
         Debug.Log("Initial Noise Frequencies - Increment: " + noiseFrequencyIncrement + ", Decrement: " + noiseFrequencyDecrement);
     }
 

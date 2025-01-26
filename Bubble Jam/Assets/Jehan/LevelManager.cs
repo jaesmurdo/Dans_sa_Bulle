@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,13 +9,18 @@ public class LevelManager : MonoBehaviour
 
     [Header("Bubble Management")]
     [SerializeField] private int maxBubblesAllowed = 3; // Nombre maximum de bulles autorisées à spawn
-    [SerializeField] private float minimumDistanceBetweenBubbles = 0.5f; // Distance minimale entre les bulles
+    [SerializeField] private float minimumDistanceBetweenBubbles = 0.3f; // Distance minimale entre les bulles
 
     [Header("Sound Configuration")]
     [SerializeField] private AudioClip spawnSound; // Son à jouer lors du spawn
     private AudioSource audioSource; // Référence à l'AudioSource
 
     private float timeSinceLastSpawn = 0f; // Temps depuis le dernier spawn
+    private float elapsedTime = 0f; // Temps écoulé depuis le début du jeu
+
+    [Header("Time Display")]
+    public TextMeshProUGUI timerText; // Référence au TextMeshPro pour afficher le temps
+    public TimeColor[] timeColorPallet; // Tableau des paliers de temps et des couleurs associées
 
     void Start()
     {
@@ -34,16 +40,25 @@ public class LevelManager : MonoBehaviour
         {
             Debug.LogError("Le son de spawn n'est pas assigné dans l'inspecteur.");
         }
+
+        // Initialiser l'affichage du temps si un TextMeshPro est assigné
+        if (timerText != null)
+        {
+            timerText.text = "0"; // Affiche 0 au début
+        }
     }
 
     void Update()
     {
+        elapsedTime += Time.deltaTime; // Met à jour le temps écoulé
         timeSinceLastSpawn += Time.deltaTime;
+
+        // Met à jour l'affichage du temps
+        UpdateTimerDisplay();
 
         // Vérifie si le spawn doit avoir lieu
         if (timeSinceLastSpawn >= spawnInterval)
         {
-            // Réinitialiser le timer de spawn
             timeSinceLastSpawn = 0f;
 
             // Vérifie si le nombre actuel de bulles dans la scène est inférieur au maximum autorisé
@@ -51,8 +66,42 @@ public class LevelManager : MonoBehaviour
 
             if (currentBubbleCount < maxBubblesAllowed)
             {
-                // Si le nombre de bulles est inférieur à la limite, spawn une nouvelle bulle
                 SpawnObjectAtRandomLocation();
+            }
+            else
+            {
+                Debug.LogWarning("Nombre maximum de bulles atteint, impossible de spawn une nouvelle bulle.");
+            }
+        }
+    }
+
+    void UpdateTimerDisplay()
+    {
+        // Affiche le temps arrondi au chiffre entier
+        if (timerText != null)
+        {
+            int timeToDisplay = Mathf.FloorToInt(elapsedTime);
+            timerText.text = timeToDisplay.ToString();
+
+            // Change la couleur du texte en fonction des paliers
+            foreach (var timeColor in timeColorPallet)
+            {
+                if (timeToDisplay >= timeColor.timeInSeconds)
+                {
+                    timerText.color = timeColor.color; // Applique la couleur associée
+
+                    // Modifie la distance entre les bulles si un modificateur est présent
+                    minimumDistanceBetweenBubbles = timeColor.distanceModifier;
+                    Debug.Log($"Nouveau minimumDistanceBetweenBubbles: {minimumDistanceBetweenBubbles}");
+
+                    // Modifie le nombre maximum de bulles autorisées si un modificateur est présent
+                    maxBubblesAllowed = timeColor.maxBubblesModifier;
+                    Debug.Log($"Nouveau maxBubblesAllowed: {maxBubblesAllowed}");
+
+                    // Modifie l'intervalle de spawn si un modificateur est présent
+                    spawnInterval = timeColor.spawnIntervalModifier;
+                    Debug.Log($"Nouveau spawnInterval: {spawnInterval}");
+                }
             }
         }
     }
@@ -63,41 +112,27 @@ public class LevelManager : MonoBehaviour
 
         bool spawnSuccessful = false;
 
-        // On tente de spawn jusqu'à ce qu'on trouve un emplacement libre
-        for (int attempt = 0; attempt < 10; attempt++)
+        for (int attempt = 0; attempt < 20; attempt++)
         {
-            // Choisir un emplacement libre aléatoire
             int randomIndex = Random.Range(0, spawnLocations.Length);
             Vector3 spawnPosition = spawnLocations[randomIndex].transform.position;
 
-            // Vérifier si l'emplacement est occupé par une autre bulle ou trop proche d'une autre bulle
             bool isOccupied = IsLocationOccupied(spawnPosition);
 
             if (!isOccupied)
             {
-                // Si l'emplacement est libre, spawn l'objet à cette position
                 GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
 
-                // Initialiser l'état de la bulle de manière aléatoire
-                CircleStateController circleStateController = spawnedObject.GetComponent<CircleStateController>();
-                if (circleStateController != null)
-                {
-                    circleStateController.InitializeRandomState(); // Fonction pour initialiser un état aléatoire
-                }
-
-                // Joue le son de spawn chaque fois que l'objet est spawn
                 if (audioSource != null && spawnSound != null)
                 {
-                    audioSource.PlayOneShot(spawnSound); // Assure-toi de jouer le son à chaque spawn
-                    Debug.Log("Son de spawn joué avec succès.");
+                    audioSource.PlayOneShot(spawnSound);
                 }
 
                 spawnSuccessful = true;
-                break; // Terminer dès qu'un spawn est réussi
+                break;
             }
         }
 
-        // Si aucune position libre n'a été trouvée après 10 tentatives, rien ne se passe.
         if (!spawnSuccessful)
         {
             Debug.LogWarning("Impossible de spawn une bulle après plusieurs tentatives.");
@@ -106,18 +141,26 @@ public class LevelManager : MonoBehaviour
 
     bool IsLocationOccupied(Vector3 position)
     {
-        // Vérifier si un objet est déjà présent à cet emplacement
         GameObject[] existingBubbles = GameObject.FindGameObjectsWithTag("bubble");
 
         foreach (var bubble in existingBubbles)
         {
-            // Si la distance entre la position de la bulle et l'emplacement est suffisamment petite, c'est considéré comme occupé
             if (Vector3.Distance(bubble.transform.position, position) < minimumDistanceBetweenBubbles)
             {
-                return true; // L'emplacement est occupé
+                return true;
             }
         }
 
-        return false; // L'emplacement est libre
+        return false;
+    }
+
+    [System.Serializable]
+    public struct TimeColor
+    {
+        public int timeInSeconds; // Temps en secondes
+        public Color color; // Couleur associée
+        public float distanceModifier; // Modificateur de la distance entre les bulles
+        public int maxBubblesModifier; // Modificateur du nombre maximum de bulles autorisées
+        public float spawnIntervalModifier; // Modificateur pour l'intervalle de spawn
     }
 }

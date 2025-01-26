@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4292809561782318168}
   - component: {fileID: -5317199295159492570}
   - component: {fileID: 890363173860418649}
+  - component: {fileID: 9017076514824206157}
   m_Layer: 0
   m_Name: Circle
   m_TagString: bubble
@@ -107,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  shakeEffectController: {fileID: 9017076514824206157}
+  moveToCollisionDuration: 0.5
   states:
   - scale: {x: 0.5, y: 0.5, z: 0}
     color: {r: 0.66389203, g: 1, b: 0.6273585, a: 1}
@@ -175,6 +178,7 @@ MonoBehaviour:
   decrementSound: {fileID: 8300000, guid: 2904e1e30ac142e4989683d60b2f84a3, type: 3}
   destructionSound: {fileID: 8300000, guid: ac26946fc57cc6841a1bcee72f679725, type: 3}
   explosionSound: {fileID: 8300000, guid: ac26946fc57cc6841a1bcee72f679725, type: 3}
+  pointSound: {fileID: 8300000, guid: 2904e1e30ac142e4989683d60b2f84a3, type: 3}
 --- !u!58 &8818178120251122520
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -287,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.14
-  floatAmplitude: 0.23
+  floatAmplitude: 0.17
   noiseFrequencyIncrement: 1
   noiseFrequencyDecrement: 0.5
   isFleeing: 0
@@ -389,6 +393,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9017076514824206157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591827377231239624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f082b2d1489dc47a0a3b1c140d3e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpDuration: 2
+  intensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxShakeIntensity: 10.6
+  shakeFrequency: 20
 --- !u!1 &8039709087001674323
 GameObject:
   m_ObjectHideFlags: 0
