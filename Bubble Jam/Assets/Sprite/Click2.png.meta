@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: 7709c5c37833b6e428f990c286d74df8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5444200169646959065
+    second: Click2_0
+  - first:
+      213: 5623964387760393129
+    second: Click2_1
+  - first:
+      213: -467235874238658415
+    second: Click2_2
+  - first:
+      213: 4596581122144243977
+    second: Click2_3
+  - first:
+      213: 8721533191950864137
+    second: Click2_4
+  - first:
+      213: -546123787712448700
+    second: Click2_5
+  - first:
+      213: 2463739924577458948
+    second: Click2_6
+  - first:
+      213: -5379536925783681400
+    second: Click2_7
+  - first:
+      213: -6630516820248988466
+    second: Click2_8
+  - first:
+      213: -4252939147151070075
+    second: Click2_9
+  - first:
+      213: 5756393806121776005
+    second: Click2_10
+  - first:
+      213: -6230433389848451765
+    second: Click2_11
+  - first:
+      213: -2692792308415338044
+    second: Click2_12
+  - first:
+      213: -2437571391645341313
+    second: Click2_13
+  - first:
+      213: -1696193847838684176
+    second: Click2_14
+  - first:
+      213: -6309051667835088960
+    second: Click2_15
+  - first:
+      213: -8360158918635304277
+    second: Click2_16
+  - first:
+      213: -2978197238739868753
+    second: Click2_17
+  - first:
+      213: -7488161106390387685
+    second: Click2_18
+  - first:
+      213: 6253432328978547246
+    second: Click2_19
+  - first:
+      213: 1764202720211130953
+    second: Click2_20
+  - first:
+      213: -6025739536277894321
+    second: Click2_21
+  - first:
+      213: 5287453506560063002
+    second: Click2_22
+  - first:
+      213: -3789358372314397913
+    second: Click2_23
+  - first:
+      213: 7639887652094885527
+    second: Click2_24
+  - first:
+      213: -4005647955084326869
+    second: Click2_25
+  - first:
+      213: 2251585960325220243
+    second: Click2_26
+  - first:
+      213: 4265391922760210006
+    second: Click2_27
+  - first:
+      213: -120537644231226014
+    second: Click2_28
+  - first:
+      213: -5226543033245248668
+    second: Click2_29
+  - first:
+      213: -2856043422704255167
+    second: Click2_30
+  - first:
+      213: -8671143126291527574
+    second: Click2_31
+  - first:
+      213: 7575765943561428279
+    second: Click2_32
+  - first:
+      213: -9100558116923106512
+    second: Click2_33
+  - first:
+      213: -5940006619470065318
+    second: Click2_34
+  - first:
+      213: 6370096173342022284
+    second: Click2_35
+  - first:
+      213: -59861483289462509
+    second: Click2_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Click2_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 261
+        width: 211
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72652125ac05274b0800000000000000
+      internalID: -5444200169646959065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 150
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abc7e940d55c0e40800000000000000
+      internalID: 5623964387760393129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 219
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1988fa9a27b0489f0800000000000000
+      internalID: -467235874238658415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 231
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9019ca64d265acf30800000000000000
+      internalID: 4596581122144243977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_4
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 230
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f820bba3c190970800000000000000
+      internalID: 8721533191950864137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_5
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 234
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447320efe47cb68f0800000000000000
+      internalID: -546123787712448700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 225
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b136f6866f03220800000000000000
+      internalID: 2463739924577458948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_7
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 203
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88611920bab0855b0800000000000000
+      internalID: -5379536925783681400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_8
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 209
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec47ecbf41cabf3a0800000000000000
+      internalID: -6630516820248988466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_9
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 185
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c25b2f0668af4c0800000000000000
+      internalID: -4252939147151070075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_10
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 189
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583b5210ba1d2ef40800000000000000
+      internalID: 5756393806121776005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_11
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 192
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45a95997dd0989a0800000000000000
+      internalID: -6230433389848451765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_12
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 171
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9effa99a741aad0800000000000000
+      internalID: -2692792308415338044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 174
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79235eebb10c2ed0800000000000000
+      internalID: -2437571391645341313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_14
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 175
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fb4f55aea8e578e0800000000000000
+      internalID: -1696193847838684176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_15
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 147
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf8a155feeb178a0800000000000000
+      internalID: -6309051667835088960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_16
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 143
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baacdece1cfbafb80800000000000000
+      internalID: -8360158918635304277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_17
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 150
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa36cd9f3615ba6d0800000000000000
+      internalID: -2978197238739868753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_18
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 142
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1474b0d525b41890800000000000000
+      internalID: -7488161106390387685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_19
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 155
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e22c5b33297a8c650800000000000000
+      internalID: 6253432328978547246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_20
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 80
+        width: 57
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a56f1e605bb7810800000000000000
+      internalID: 1764202720211130953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_21
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 155
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b012741d5406ca0800000000000000
+      internalID: -6025739536277894321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_22
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 127
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16f7e833fec06940800000000000000
+      internalID: 5287453506560063002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_23
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 134
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7234c8323ae796bc0800000000000000
+      internalID: -3789358372314397913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_24
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 133
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e320b7755560a60800000000000000
+      internalID: 7639887652094885527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_25
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 138
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28cded58641968c0800000000000000
+      internalID: -4005647955084326869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_26
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 122
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3970172608d3f3f10800000000000000
+      internalID: 2251585960325220243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_27
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 107
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65651ffca57b13b30800000000000000
+      internalID: 4265391922760210006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_28
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 116
+        width: 16
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d0985b6a3c35ef0800000000000000
+      internalID: -120537644231226014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_29
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 122
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463df1c7dc69777b0800000000000000
+      internalID: -5226543033245248668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_30
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 119
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f3f9693ab4d58d0800000000000000
+      internalID: -2856043422704255167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_31
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 127
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68c2d0b449e9a780800000000000000
+      internalID: -8671143126291527574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_32
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 108
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d1b7fccf6822960800000000000000
+      internalID: 7575765943561428279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_33
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 121
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b10070c9254b180800000000000000
+      internalID: -9100558116923106512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_34
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 119
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51940b737bd09da0800000000000000
+      internalID: -5940006619470065318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_35
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 118
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a502d28b0276850800000000000000
+      internalID: 6370096173342022284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click2_36
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 93
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319bdc05c445b2ff0800000000000000
+      internalID: -59861483289462509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Click2_0: -5444200169646959065
+      Click2_1: 5623964387760393129
+      Click2_10: 5756393806121776005
+      Click2_11: -6230433389848451765
+      Click2_12: -2692792308415338044
+      Click2_13: -2437571391645341313
+      Click2_14: -1696193847838684176
+      Click2_15: -6309051667835088960
+      Click2_16: -8360158918635304277
+      Click2_17: -2978197238739868753
+      Click2_18: -7488161106390387685
+      Click2_19: 6253432328978547246
+      Click2_2: -467235874238658415
+      Click2_20: 1764202720211130953
+      Click2_21: -6025739536277894321
+      Click2_22: 5287453506560063002
+      Click2_23: -3789358372314397913
+      Click2_24: 7639887652094885527
+      Click2_25: -4005647955084326869
+      Click2_26: 2251585960325220243
+      Click2_27: 4265391922760210006
+      Click2_28: -120537644231226014
+      Click2_29: -5226543033245248668
+      Click2_3: 4596581122144243977
+      Click2_30: -2856043422704255167
+      Click2_31: -8671143126291527574
+      Click2_32: 7575765943561428279
+      Click2_33: -9100558116923106512
+      Click2_34: -5940006619470065318
+      Click2_35: 6370096173342022284
+      Click2_36: -59861483289462509
+      Click2_4: 8721533191950864137
+      Click2_5: -546123787712448700
+      Click2_6: 2463739924577458948
+      Click2_7: -5379536925783681400
+      Click2_8: -6630516820248988466
+      Click2_9: -4252939147151070075
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

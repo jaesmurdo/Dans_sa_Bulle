@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 6d15b279832c8c54ba6b4cb2e697957a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -335954145228406732
+    second: Click1_0
+  - first:
+      213: -7390801974186509351
+    second: Click1_1
+  - first:
+      213: 3617047979585695167
+    second: Click1_2
+  - first:
+      213: 659550824475675981
+    second: Click1_3
+  - first:
+      213: -7073570972273970564
+    second: Click1_4
+  - first:
+      213: 2892638272591943924
+    second: Click1_5
+  - first:
+      213: 1264412804091187087
+    second: Click1_6
+  - first:
+      213: -376795481667163400
+    second: Click1_7
+  - first:
+      213: 3324906798571500015
+    second: Click1_8
+  - first:
+      213: -2531953451835196034
+    second: Click1_9
+  - first:
+      213: -2815879446294529218
+    second: Click1_10
+  - first:
+      213: -8226511517433675564
+    second: Click1_11
+  - first:
+      213: 4963521719698681018
+    second: Click1_12
+  - first:
+      213: 5249911815375710245
+    second: Click1_13
+  - first:
+      213: -4615213306320700935
+    second: Click1_14
+  - first:
+      213: -3051160698116433617
+    second: Click1_15
+  - first:
+      213: 9024254030344439362
+    second: Click1_16
+  - first:
+      213: 2530896833823633458
+    second: Click1_17
+  - first:
+      213: -2446110557594324558
+    second: Click1_18
+  - first:
+      213: -1787441168101332601
+    second: Click1_19
+  - first:
+      213: 2761973475049559403
+    second: Click1_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Click1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 196
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43047d02c73765bf0800000000000000
+      internalID: -335954145228406732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 206
+        width: 208
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db7b5b33c89e6990800000000000000
+      internalID: -7390801974186509351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 94
+        width: 142
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdefb639f5523230800000000000000
+      internalID: 3617047979585695167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_3
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 252
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d403cfaf1372900800000000000000
+      internalID: 659550824475675981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_4
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 242
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7278189da0a5dd90800000000000000
+      internalID: -7073570972273970564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 221
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8da8dde27b42820800000000000000
+      internalID: 2892638272591943924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_6
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 210
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f8f450fb81c8110800000000000000
+      internalID: 1264412804091187087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 166
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faa14a718a55caf0800000000000000
+      internalID: -376795481667163400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_8
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 159
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe1b2200e11742e20800000000000000
+      internalID: 3324906798571500015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_9
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 119
+        width: 110
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7df98b10c1bcdcd0800000000000000
+      internalID: -2531953451835196034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_10
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 124
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b7a41109cfbe8d0800000000000000
+      internalID: -2815879446294529218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_11
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 152
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0c4be5c5f85dd80800000000000000
+      internalID: -8226511517433675564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_12
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 125
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc6399c4b8f1e440800000000000000
+      internalID: 4963521719698681018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_13
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 132
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52868991bfe6bd840800000000000000
+      internalID: 5249911815375710245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_14
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 107
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9391a43f773ffb0800000000000000
+      internalID: -4615213306320700935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_15
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 130
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f291324c28918a5d0800000000000000
+      internalID: -3051160698116433617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_16
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 101
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24641916a379c3d70800000000000000
+      internalID: 9024254030344439362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_17
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 116
+        width: 28
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230f737d24d8f1320800000000000000
+      internalID: 2530896833823633458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_18
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 109
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b1f14d686bad0ed0800000000000000
+      internalID: -2446110557594324558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_19
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 115
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78929665abbb137e0800000000000000
+      internalID: -1787441168101332601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Click1_20
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 90
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b655163fd30845620800000000000000
+      internalID: 2761973475049559403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Click1_0: -335954145228406732
+      Click1_1: -7390801974186509351
+      Click1_10: -2815879446294529218
+      Click1_11: -8226511517433675564
+      Click1_12: 4963521719698681018
+      Click1_13: 5249911815375710245
+      Click1_14: -4615213306320700935
+      Click1_15: -3051160698116433617
+      Click1_16: 9024254030344439362
+      Click1_17: 2530896833823633458
+      Click1_18: -2446110557594324558
+      Click1_19: -1787441168101332601
+      Click1_2: 3617047979585695167
+      Click1_20: 2761973475049559403
+      Click1_3: 659550824475675981
+      Click1_4: -7073570972273970564
+      Click1_5: 2892638272591943924
+      Click1_6: 1264412804091187087
+      Click1_7: -376795481667163400
+      Click1_8: 3324906798571500015
+      Click1_9: -2531953451835196034
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
